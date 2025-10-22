@@ -1,0 +1,1 @@
+# GitOps_na_Pratica_com_Kubernetes_e_ArgoCD

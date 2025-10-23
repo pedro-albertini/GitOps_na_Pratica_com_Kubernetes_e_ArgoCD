@@ -103,15 +103,15 @@ Acesse no navegador:
 
 E você verá uma página assim:
 
-<img width="1914" height="auto" alt="image" src="https://github.com/user-attachments/assets/e0b237f1-3ba2-4c50-9e05-308189c35541" />
-
-<br>
+| <img width="1914" height="540" alt="image" src="https://github.com/user-attachments/assets/e0b237f1-3ba2-4c50-9e05-308189c35541" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Painel ArgoCD* |
 
 Credenciais padrão:
 
-Usuário: admin
+- Usuário: admin
 
-Senha: <use o comando abaixo para descobrir>
+- Senha: (use o comando abaixo para descobrir)
 
 ```
 kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo

@@ -68,6 +68,7 @@ git push -u origin main
 ```
 
 Ou simplesmente copie como está nesse repositório
+
 <br>
 
 ## ⚙️ Etapa 2 – Instalar o ArgoCD no cluster
@@ -99,6 +100,12 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 Acesse no navegador:
 🔗 https://localhost:8080
+
+E você verá uma página assim:
+
+<img width="1914" height="auto" alt="image" src="https://github.com/user-attachments/assets/e0b237f1-3ba2-4c50-9e05-308189c35541" />
+
+<br>
 
 Credenciais padrão:
 

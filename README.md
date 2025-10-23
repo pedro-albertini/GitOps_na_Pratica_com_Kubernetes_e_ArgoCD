@@ -67,6 +67,7 @@ git commit -m "Adiciona manifests do Online Boutique"
 git push -u origin main
 ```
 
+Ou simplesmente copie como está nesse repositório
 <br>
 
 ## ⚙️ Etapa 2 – Instalar o ArgoCD no cluster
@@ -84,7 +85,7 @@ Verifique os pods:
 kubectl get pods -n argocd
 ```
 
-Todos devem aparecer com status Running.:chec
+Todos devem aparecer com status Running.✔️
 
 <br>
 

@@ -135,7 +135,25 @@ Preencha os campos:
 | **Cluster URL** | https://kubernetes.default.svc | 
 | **Namespace** | default | 
 
+- Clique em Create
 
-Clique em Create
+- Depois, clique em SYNC → SYNCHRONIZE
 
-Depois, clique em SYNC → SYNCHRONIZE
+- Para acessar a sua aplicação, crie o port-forward:
+  
+```
+kubectl port-forward svc/frontend 8081:80
+```
+
+<br>
+
+Acesse no navegador:
+🔗 https://localhost:8081
+
+E você verá sua aplicação rodando:
+
+| <img width="1917" height="868" alt="image" src="https://github.com/user-attachments/assets/f09e2683-d636-49de-8f46-4a6e7b4a36c6" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Aplicação Rodando* |
+
+

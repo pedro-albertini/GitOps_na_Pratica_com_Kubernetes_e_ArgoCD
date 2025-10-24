@@ -76,7 +76,7 @@ git commit -m "Adiciona manifests do Online Boutique"
 git push -u origin main
 ```
 
-Ou simplesmente copie a pasta k8s e o arquivo .yaml que está nesse repositório
+Ou copie a estrutura de pastas e o arquivo .yaml conforme mostrado neste repositório
 
 <br>
 
@@ -108,7 +108,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
 Acesse no navegador:
-🔗 https://localhost:8080
+🔗 http://localhost:8080
 
 E você verá uma página assim:
 
@@ -182,7 +182,7 @@ kubectl port-forward svc/frontend 8081:80
 ```
 
 Acesse no navegador:
-🔗 https://localhost:8081
+🔗 http://localhost:8081
 
 E você verá sua aplicação rodando:
 
@@ -205,3 +205,8 @@ Como nesse caso, a mudança da logo e a frase "ArgoCD sincronizado":
 ## 🧾 Conclusão
 
 O projeto GitOps na Prática com Kubernetes e ArgoCD mostra, de forma simples e direta, como automatizar todo o processo de colocar uma aplicação no ar. Usando o Kubernetes para rodar os serviços e o ArgoCD para cuidar dos deploys, tudo fica controlado pelo Git, que guarda as versões e aplica as mudanças sozinho. Assim, o trabalho fica mais seguro, rápido e organizado.
+
+---
+🧑‍💻 Desenvolvido por [Pedro Albertini Fernandes Pinto](https://github.com/pedro-albertini)  
+Projeto prático do módulo **GitOps com Kubernetes e ArgoCD**
+

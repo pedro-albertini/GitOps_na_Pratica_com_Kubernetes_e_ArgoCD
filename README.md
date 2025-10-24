@@ -7,7 +7,7 @@
 ## 🧭 Introdução
 
 O desenvolvimento moderno exige **entregas rápidas, seguras e versionadas**.  
-Empresas como **Netflix** e **Nubank** utilizam o **Kubernetes** para orquestrar containers em escala e adotam **GitOps** para automatizar seus deploys — tendo o **Git como a única fonte de verdade** da infraestrutura.
+Grandes empresas utilizam o **Kubernetes** para orquestrar containers em escala e adotam **GitOps** para automatizar seus deploys — tendo o **Git como a única fonte de verdade** da infraestrutura.
 
 Este projeto demonstra exatamente isso, em um ambiente local, utilizando:
 
@@ -67,7 +67,7 @@ git commit -m "Adiciona manifests do Online Boutique"
 git push -u origin main
 ```
 
-Ou simplesmente copie como está nesse repositório
+Ou simplesmente copie a pasta k8s e o arquivo .yaml que está nesse repositório
 
 <br>
 
@@ -123,7 +123,7 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 No painel do ArgoCD, clique em NEW APP
 
-Preencha os campos:
+Preencha os campos de acordo com a tabela a seguir:
 
 | Campo | Valor | 
 |-------------|--------|
@@ -135,17 +135,42 @@ Preencha os campos:
 | **Cluster URL** | https://kubernetes.default.svc | 
 | **Namespace** | default | 
 
+<br>
+
+Ficando assim o preenchimento dos campos no ArgoCD:
+
+| <img width="1883" height="871" alt="image" src="https://github.com/user-attachments/assets/7c96af3a-dddf-41a0-a188-34f3f6c4eb41" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Configuração Aplicação ArgoCD* |
+
+| <img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/9e18e7b2-04b1-466a-b915-c41c20b0ee11" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Configuração Aplicação ArgoCD* |
+
+| <img width="1919" height="856" alt="image" src="https://github.com/user-attachments/assets/35cbf254-70ea-419a-9543-34d45a4f3df1" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Configuração Aplicação ArgoCD* |
+
 - Clique em Create
 
 - Depois, clique em SYNC → SYNCHRONIZE
 
-- Para acessar a sua aplicação, crie o port-forward:
+- Verifique se os pods da aplicação estão rodando:
+
+```
+kubectl get pods
+```
+
+<br>
+
+## 🖥️ Etapa 5 – Acessar o front-end (ClusterIP)
+
+O serviço frontend roda como ClusterIP, portanto não é acessível externamente por padrão.
+Para testar localmente, faça o port-forward:
   
 ```
 kubectl port-forward svc/frontend 8081:80
 ```
-
-<br>
 
 Acesse no navegador:
 🔗 https://localhost:8081
@@ -156,4 +181,18 @@ E você verá sua aplicação rodando:
 |-------------------------------------------------------------------------------------------------------------------------|
 | *Figura - Aplicação Rodando* |
 
+<br>
 
+💡 Como o ArgoCD está sincronizado com o repositório Git, qualquer mudança feita no arquivo online-boutique.yaml (como número de réplicas, nome de serviço ou imagem do container) é detectada automaticamente e aplicada no cluster.
+
+Como nesse caso, a mudança da logo e a frase "ArgoCD sincronizado":
+
+| <img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/9c8135df-3576-4bf8-a49e-2ca57dbc4c78" /> |
+|-------------------------------------------------------------------------------------------------------------------------|
+| *Figura - Aplicação Rodando* |
+
+<br>
+
+## 🧾 Conclusão
+
+O projeto GitOps na Prática com Kubernetes e ArgoCD mostra, de forma simples e direta, como automatizar todo o processo de colocar uma aplicação no ar. Usando o Kubernetes para rodar os serviços e o ArgoCD para cuidar dos deploys, tudo fica controlado pelo Git, que guarda as versões e aplica as mudanças sozinho. Assim, o trabalho fica mais seguro, rápido e organizado.

@@ -4,6 +4,15 @@
 
 <br>
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=kubernetes,github" />
+  <img src="https://argo-cd.readthedocs.io/en/stable/assets/logo.png" width="48" height="48" alt="ArgoCD"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rancher/rancher-original.svg" width="48" height="48" alt="Rancher Desktop"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg" width="48" height="48" alt="YAML"/>
+</p>
+
+<br>
+
 ## 🧭 Introdução
 
 O desenvolvimento moderno exige **entregas rápidas, seguras e versionadas**.  
